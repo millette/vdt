@@ -1,0 +1,26 @@
+{
+  "name": "reds",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "lint": "standard",
+    "dev": "standard && next",
+    "build": "standard && next build",
+    "export": "next export",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "@rematch/core": "^0.6.0",
+    "detect-node": "^2.0.3",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^5.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2"
+  }
+}
