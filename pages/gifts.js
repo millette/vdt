@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <h1>Counter</h1>
+        <h1> Counter </h1>
         <h3>The count is {this.props.gift}</h3>
         <p>
           <button onClick={this.props.increment}>increment</button>

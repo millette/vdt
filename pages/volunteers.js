@@ -11,11 +11,11 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <h1>Counter</h1>
-        <h3>The count is {this.props.gift}</h3>
+        <h1> Counter </h1>
+        <h3>The count is {this.props.volunteer}</h3>
         <p>
           <button onClick={this.props.increment}>increment</button>
-          <button onClick={() => dispatch.gift.increment(1)}>
+          <button onClick={() => dispatch.volunteer.increment(1)}>
             increment (using dispatch function)
           </button>
           <button onClick={this.props.incrementBy(5)}>increment by 5</button>
@@ -28,10 +28,10 @@ class Home extends Component {
 }
 
 const mapState = state => ({
-  gift: state.gift
+  volunteer: state.volunteer
 })
 
-const mapDispatch = ({ gift: { increment, incrementAsync } }) => ({
+const mapDispatch = ({ volunteer: { increment, incrementAsync } }) => ({
   increment: () => increment(1),
   incrementBy: amount => () => increment(amount),
   incrementAsync: () => incrementAsync(1)
