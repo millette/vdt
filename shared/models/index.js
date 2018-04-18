@@ -1,7 +1,9 @@
 'use strict'
 
-import counter from './counter'
-import github from './github'
+import volunteer from './volunteer'
+import gift from './gift'
+import org from './org'
 
-export { counter }
-export { github }
+export { volunteer }
+export { gift }
+export { org }

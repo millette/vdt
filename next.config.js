@@ -3,6 +3,8 @@
 module.exports = {
   exportPathMap: (defaultPathMap) => ({
     '/': { page: '/' },
-    '/github-users': { page: '/github-users' }
+    '/gifts': { page: '/gifts' },
+    '/orgs': { page: '/orgs' },
+    '/volunteers': { page: '/volunteers' }
   })
 }

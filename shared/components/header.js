@@ -15,8 +15,18 @@ class Header extends Component {
               </Link>
             </li>
             <li>
-              <Link href='/github-users' passHref>
-                <a>Async Example </a>
+              <Link href='/orgs' passHref>
+                <a>Orgs Example</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/gifts' passHref>
+                <a>Gifts Example</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/volunteers' passHref>
+                <a>Volunteers Example</a>
               </Link>
             </li>
           </ul>

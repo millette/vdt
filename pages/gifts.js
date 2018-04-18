@@ -5,6 +5,7 @@ import { dispatch } from '@rematch/core'
 import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 import Header from '../shared/components/header'
+import OrgDisplay from '../shared/components/org-display'
 
 class Home extends Component {
   render () {
@@ -22,6 +23,9 @@ class Home extends Component {
           <button onClick={this.props.incrementAsync}>incrementAsync</button>
         </p>
         <br />
+        <p>Mo' stuff.</p>
+        <hr />
+        <OrgDisplay />
       </div>
     )
   }
