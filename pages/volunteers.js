@@ -6,20 +6,24 @@ import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 import Header from '../shared/components/header'
 
-class Home extends Component {
+const birthdate = '1971-11-22'
+
+class Volunteers extends Component {
   render () {
     return (
       <div>
         <Header />
-        <h1> Counter </h1>
-        <h3>The count is {this.props.volunteer}</h3>
+        <h1>Counter</h1>
+        <h2>{this.props.volunteers.length}</h2>
+        <h3>{(this.props.volunteers.length && this.props.volunteers[this.props.volunteers.length - 1].name) || ''}</h3>
+        <h3>{(this.props.volunteers.length && this.props.volunteers[this.props.volunteers.length - 1].birthdate) || ''}</h3>
         <p>
-          <button onClick={this.props.increment}>increment</button>
-          <button onClick={() => dispatch.volunteer.increment(1)}>
+          <button onClick={this.props.addVolunteer}>increment</button>
+          <button onClick={() => dispatch.volunteer.addVolunteer({ birthdate, name: 'Dis' })}>
             increment (using dispatch function)
           </button>
-          <button onClick={this.props.incrementBy(5)}>increment by 5</button>
-          <button onClick={this.props.incrementAsync}>incrementAsync</button>
+          <button onClick={this.props.addVolunteerBy({ name: 'Rah' })}>increment by 5</button>
+          <button onClick={this.props.addVolunteerAsync}>incrementAsync</button>
         </p>
         <br />
       </div>
@@ -27,14 +31,12 @@ class Home extends Component {
   }
 }
 
-const mapState = state => ({
-  volunteer: state.volunteer
+const mapState = (state) => ({ ...state.volunteer })
+
+const mapDispatch = ({ volunteer: { addVolunteer, addVolunteerAsync } }) => ({
+  addVolunteer: () => addVolunteer({ birthdate, name: 'Joe' }),
+  addVolunteerBy: (o) => () => addVolunteer({ ...o, birthdate: '2001-05-10' }),
+  addVolunteerAsync: () => addVolunteerAsync({ birthdate, name: 'Bomp' })
 })
 
-const mapDispatch = ({ volunteer: { increment, incrementAsync } }) => ({
-  increment: () => increment(1),
-  incrementBy: amount => () => increment(amount),
-  incrementAsync: () => incrementAsync(1)
-})
-
-export default withRematch(initStore, mapState, mapDispatch)(Home)
+export default withRematch(initStore, mapState, mapDispatch)(Volunteers)

@@ -1,19 +1,37 @@
 'use strict'
 
 export default {
-  state: 0, // initial state
+  state: {
+    // name: '',
+    // birthdate: ''
+    volunteers: []
+  }, // initial state
   reducers: {
     // handle state changes with pure functions
-    increment (state, payload) {
-      return state + payload
+    addVolunteer (state, volunteer) {
+      return { ...state, volunteers: [...state.volunteers, volunteer] }
     }
+    /*
+    setName (state, name) {
+      return { ...state, name }
+    },
+    setBirth (state, birthdate) {
+      return { ...state, birthdate }
+    }
+    */
   },
   effects: {
     // handle state changes with impure functions.
     // use async/await for async actions
-    async incrementAsync (payload, rootState) {
+    /*
+    async setNameAsync (name, rootState) {
       await new Promise(resolve => setTimeout(resolve, 1000))
-      this.increment(payload)
+      this.setName(name)
+    }
+    */
+    async addVolunteerAsync (volunteer, rootState) {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      this.addVolunteer(volunteer)
     }
   }
 }

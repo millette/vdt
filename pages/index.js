@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
+import Link from 'next/link'
 import { dispatch } from '@rematch/core'
 import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
@@ -13,6 +14,7 @@ class Home extends Component {
         <Header />
         <h1>Counter</h1>
         <h3>The count is {this.props.gift}</h3>
+        <p><Link prefetch href='/nowhere'><a>Nowhere</a></Link>.</p>
         <p>
           <button onClick={this.props.increment}>increment</button>
           <button onClick={() => dispatch.gift.increment(1)}>
