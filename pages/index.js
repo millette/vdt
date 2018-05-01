@@ -14,7 +14,7 @@ class Home extends Component {
         <Header />
         <h1>Counter</h1>
         <h3>The count is {this.props.gift}</h3>
-        <p><Link prefetch href='/nowhere'><a>Nowhere</a></Link>.</p>
+        <p><Link href='/nowhere'><a>Nowhere</a></Link>.</p>
         <p>
           <button onClick={this.props.increment}>increment</button>
           <button onClick={() => dispatch.gift.increment(1)}>
