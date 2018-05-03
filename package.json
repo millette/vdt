@@ -1,7 +1,6 @@
 {
-  "name": "reds",
+  "name": "vdt",
   "version": "0.0.0",
-  "main": "index.js",
   "license": "AGPL-3.0",
   "scripts": {
     "lint": "standard",
