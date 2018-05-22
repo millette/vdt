@@ -7,7 +7,7 @@ class OrgDisplay extends Component {
   render () {
     return (
       <div>
-        <h3>Counter </h3>
+        <h3>Counter</h3>
         <p>
           This counter is connected via the <b>connect</b> function. Components
           which are not pages can be connected using the connect function just

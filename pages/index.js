@@ -1,22 +1,13 @@
 'use strict'
 
-import React, { Component } from 'react'
+import React from 'react'
 import Header from '../shared/components/header'
 import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 
-class Home extends Component {
-  render () {
-    return (
-      <div>
-        <Header />
-        <h1>Accueil</h1>
-        <p>C’est comme ça.</p>
-      </div>
-    )
-  }
-}
+const Home = () => <div>
+  <Header title='Accueil' />
+  <p>C’est comme ça.</p>
+</div>
 
-const nop = () => ({})
-
-export default withRematch(initStore, nop, nop)(Home)
+export default withRematch(initStore)(Home)

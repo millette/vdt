@@ -8,7 +8,7 @@ class Auth extends Component {
     super(props)
     this.state = { error: false }
     this.onSubmit = this.onSubmit.bind(this)
-    this.onLogout = this.props.logout666.bind(this)
+    this.onLogout = this.props.logout.bind(this)
   }
 
   onSubmit (ev) {
@@ -16,7 +16,7 @@ class Auth extends Component {
     if (!this.name.value) { return }
     this.setState({ error: this.pw.value ? false : 'Missing: password' })
     if (this.pw.value) {
-      this.props.login666(this.name.value)
+      this.props.login(this.name.value)
     }
   }
 
@@ -36,7 +36,7 @@ class Auth extends Component {
           Password <input type='password' ref={(pw) => { this.pw = pw }} />
         </label>
         <br />
-        <input type='submit' />
+        <button>Login</button>
       </form>
 
     return (
