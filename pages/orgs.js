@@ -11,16 +11,18 @@ class Orgs extends Component {
     return (
       <div>
         <Header title='Les Orgs' />
-        <h2>The count is {this.props.org}</h2>
+        <h2>The count is {this.props.org.length}</h2>
         <p>
-          <button onClick={this.props.increment}>increment</button>
-          <button onClick={() => dispatch.org.increment(1)}>
-            increment (using dispatch function)
+          <button onClick={this.props.add2}>add</button>
+          <button onClick={() => dispatch.org.add({ name: 'rah' })}>
+            add (using dispatch function)
           </button>
-          <button onClick={this.props.incrementBy(5)}>increment by 5</button>
-          <button onClick={this.props.incrementAsync}>incrementAsync</button>
+          <button onClick={this.props.add2By({ name: 'joeBy' })}>add joeBy</button>
+          <button onClick={this.props.add2Async}>incrementAsync</button>
         </p>
-        <br />
+        <ol>
+          {this.props.org.map((o, i) => <li key={i}>{o.name}</li>)}
+        </ol>
       </div>
     )
   }
@@ -30,10 +32,10 @@ const mapState = (state) => ({
   org: state.org
 })
 
-const mapDispatch = ({ org: { increment, incrementAsync } }) => ({
-  increment: () => increment(1),
-  incrementBy: amount => () => increment(amount),
-  incrementAsync: () => incrementAsync(1)
+const mapDispatch = ({ org: { add, addAsync } }) => ({
+  add2: () => add({ name: 'joe' }),
+  add2By: (anOrg) => () => add(anOrg),
+  add2Async: () => addAsync({ name: 'joeAsync' })
 })
 
 export default withRematch(initStore, mapState, mapDispatch)(Orgs)

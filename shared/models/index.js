@@ -1,11 +1,11 @@
 'use strict'
 
-import volunteer from './volunteer'
-import gift from './gift'
-import org from './org'
 import auth from './auth'
+import org from './org'
+import gift from './gift'
+import volunteer from './volunteer'
 
-export { volunteer }
-export { gift }
-export { org }
 export { auth }
+export { org }
+export { gift }
+export { volunteer }
