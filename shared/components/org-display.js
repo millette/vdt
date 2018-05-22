@@ -13,9 +13,9 @@ class OrgDisplay extends Component {
           which are not pages can be connected using the connect function just
           like redux components.
         </p>
-        <p>Current value {this.props.org} </p>
+        <p>Current length {this.props.org.length} </p>
         <p>
-          <button onClick={this.props.incrementBy3}>Increment</button>
+          <button onClick={this.props.add3}>Increment</button>
         </p>
       </div>
     )
@@ -26,8 +26,8 @@ const mapState = (state) => ({
   org: state.org
 })
 
-const mapDispatch = ({ org: { increment, incrementAsync } }) => ({
-  incrementBy3: () => increment(3)
+const mapDispatch = ({ org: { add } }) => ({
+  add3: () => add({ name: 'disp' })
 })
 
 export default connect(mapState, mapDispatch)(OrgDisplay)

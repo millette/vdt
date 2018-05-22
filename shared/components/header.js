@@ -1,6 +1,5 @@
 'use strict'
 
-// import React, { Component } from 'react'
 import React from 'react'
 import Auth from './auth'
 import Link from 'next/link'
@@ -19,6 +18,19 @@ const Header = (props) => <div>
           <a>Orgs Example</a>
         </Link>
       </li>
+
+      <li>
+        <Link href='/gifts' prefetch>
+          <a>Gifts Example</a>
+        </Link>
+      </li>
+
+      <li>
+        <Link href='/volunteers' prefetch>
+          <a>Volunteers Example</a>
+        </Link>
+      </li>
+
     </ul>
   </nav>
   <h1>{props.title || ''}</h1>
