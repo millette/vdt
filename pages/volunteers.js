@@ -31,7 +31,7 @@ class Volunteers extends Component {
   }
 }
 
-const mapState = (state) => ({ ...state.volunteer })
+const mapState = (state) => ({ volunteers: state.volunteer })
 
 const mapDispatch = ({ volunteer: { addVolunteer, addVolunteerAsync } }) => ({
   addVolunteer: () => addVolunteer({ birthdate, name: 'Joe' }),
