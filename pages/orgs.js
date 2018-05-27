@@ -21,7 +21,7 @@ class Orgs extends Component {
           <button onClick={this.props.add2Async}>incrementAsync</button>
         </p>
         <ol>
-          {this.props.org.map((o, i) => <li key={i}>{o.name}</li>)}
+          {this.props.org.map((o, i) => <li key={`org-${i}`}>{o.name}</li>)}
         </ol>
       </div>
     )

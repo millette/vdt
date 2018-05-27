@@ -1,19 +1,17 @@
 'use strict'
 
 export default {
-  state: 0, // initial state
+  state: [], // initial state
   reducers: {
     // handle state changes with pure functions
-    increment (state, payload) {
-      return state + payload
-    }
+    add: (state, gift) => [...state, gift]
   },
   effects: {
     // handle state changes with impure functions.
     // use async/await for async actions
-    async incrementAsync (payload, rootState) {
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      this.increment(payload)
+    async addAsync (payload, rootState) {
+      await new Promise(resolve => setTimeout(resolve, 3000))
+      this.add(payload)
     }
   }
 }
