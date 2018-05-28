@@ -19,7 +19,7 @@ class Gifts extends Component {
       <div>
         <Header />
         <h1>Gifts</h1>
-        <GiftForm save={this.save} />
+        <GiftForm username={this.props.username} save={this.save} />
         <p>
           <button onClick={this.props.add}>increment</button>
           <button onClick={() => dispatch.gift.add({ title: 'oy' })}>
@@ -45,7 +45,8 @@ class Gifts extends Component {
 }
 
 const mapState = state => ({
-  gift: state.gift
+  gift: state.gift,
+  username: state.auth.name
 })
 
 const mapDispatch = ({ gift: { add, addAsync } }) => ({

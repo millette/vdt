@@ -8,7 +8,7 @@ class Auth extends Component {
     super(props)
     this.state = { error: false }
     this.onSubmit = this.onSubmit.bind(this)
-    this.onLogout = this.props.logout.bind(this)
+    this.onLogout = this.props.logout
   }
 
   onSubmit (ev) {

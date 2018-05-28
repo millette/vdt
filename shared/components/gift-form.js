@@ -15,7 +15,7 @@ class GiftForm extends Component {
     const estimate = this.estimate.value && parseFloat(this.estimate.value)
     const category = this.category.value && this.category.value.trim()
 
-    return this.props.save({ title, description, estimate, category })
+    return this.props.save({ username: this.props.username, title, description, estimate, category })
       .then(() => {
         this.title.form.reset()
         this.title.style.background = 'transparent'
@@ -30,6 +30,7 @@ class GiftForm extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
+        <p>{this.props.username}</p>
         <label>
           Title:
           <input required type='text' ref={(title) => { this.title = title }} />
