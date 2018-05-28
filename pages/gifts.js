@@ -6,13 +6,20 @@ import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 import Header from '../shared/components/header'
 import OrgDisplay from '../shared/components/org-display'
+import GiftForm from '../shared/components/gift-form'
 
 class Gifts extends Component {
+  constructor (props) {
+    super(props)
+    this.save = this.props.addAsync.bind(this)
+  }
+
   render () {
     return (
       <div>
         <Header />
-        <h1> Counter </h1>
+        <h1>Gifts</h1>
+        <GiftForm save={this.save} />
         <p>
           <button onClick={this.props.add}>increment</button>
           <button onClick={() => dispatch.gift.add({ title: 'oy' })}>
@@ -25,6 +32,8 @@ class Gifts extends Component {
         <ol>
           {this.props.gift.map((x, i) => <li key={`gift-${i}`}>
             {i} {x.title}
+            <br />
+            {JSON.stringify(x)}
           </li>)}
         </ol>
         <p>Mo' stuff.</p>
@@ -41,8 +50,8 @@ const mapState = state => ({
 
 const mapDispatch = ({ gift: { add, addAsync } }) => ({
   add: () => add(1),
-  addBy: amount => () => add(amount),
-  addAsync: () => addAsync(1)
+  addBy: (gift) => () => add(gift),
+  addAsync: (gift) => addAsync(gift)
 })
 
 export default withRematch(initStore, mapState, mapDispatch)(Gifts)
