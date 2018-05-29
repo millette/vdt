@@ -1,11 +1,11 @@
 'use strict'
 
 module.exports = {
-  "presets": [
-    "next/babel"
+  presets: [
+    'next/babel'
   ],
-  "plugins": [
+  plugins: [
     // ["transform-define", "./env-config.js"]
-    ["transform-define", { "process.env.NODE_ENV": process.env.NODE_ENV }]
+    ['transform-define', { 'process.env.NODE_ENV': process.env.NODE_ENV }]
   ]
 }
