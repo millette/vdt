@@ -1,7 +1,6 @@
 'use strict'
 
 import React, { Component } from 'react'
-import { dispatch } from '@rematch/core'
 import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 import Header from '../shared/components/header'
@@ -17,17 +16,8 @@ class Gifts extends Component {
   render () {
     return (
       <div>
-        <Header />
-        <h1>Gifts</h1>
+        <Header title='Gifts' />
         <GiftForm username={this.props.username} save={this.save} />
-        <p>
-          <button onClick={this.props.add}>increment</button>
-          <button onClick={() => dispatch.gift.add({ title: 'oy' })}>
-            increment (using dispatch function)
-          </button>
-          <button onClick={this.props.addBy(5)}>increment by 5</button>
-          <button onClick={this.props.addAsync}>incrementAsync</button>
-        </p>
         <h3>The count is {this.props.gift.length}</h3>
         <ol>
           {this.props.gift.map((x, i) => <li key={`gift-${i}`}>
@@ -36,7 +26,6 @@ class Gifts extends Component {
             {JSON.stringify(x)}
           </li>)}
         </ol>
-        <p>Mo' stuff.</p>
         <hr />
         <OrgDisplay />
       </div>
@@ -49,9 +38,7 @@ const mapState = state => ({
   username: state.auth.name
 })
 
-const mapDispatch = ({ gift: { add, addAsync } }) => ({
-  add: () => add(1),
-  addBy: (gift) => () => add(gift),
+const mapDispatch = ({ gift: { addAsync } }) => ({
   addAsync: (gift) => addAsync(gift)
 })
 

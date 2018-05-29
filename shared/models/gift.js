@@ -15,9 +15,9 @@ export default {
   effects: {
     // handle state changes with impure functions.
     // use async/await for async actions
-    async addAsync (payload, rootState) {
-      await new Promise(resolve => setTimeout(resolve, 300))
-      return this.add(payload)
+    addAsync (payload, rootState) {
+      return new Promise(resolve => setTimeout(resolve, 300))
+        .then(() => this.add(payload))
     }
   }
 }
