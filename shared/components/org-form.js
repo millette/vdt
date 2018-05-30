@@ -30,7 +30,6 @@ class OrgForm extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <p>{this.props.username}</p>
         <label>
           Title:
           <input required type='text' ref={(title) => { this.title = title }} />
