@@ -1,7 +1,14 @@
 'use strict'
 
 export default {
-  state: [],
+  state: [
+    {
+      title: 'org1'
+    },
+    {
+      title: 'org2'
+    }
+  ],
   reducers: {
     // handle state changes with pure functions
     // add: (state, payload) => [...state, payload]

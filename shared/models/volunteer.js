@@ -1,7 +1,14 @@
 'use strict'
 
 export default {
-  state: [],
+  state: [
+    {
+      title: 'volunteer1'
+    },
+    {
+      title: 'volunteer2'
+    }
+  ],
   reducers: {
     // addVolunteer: (state, volunteer) => [...state, volunteer]
     add: (state, volunteer) => {

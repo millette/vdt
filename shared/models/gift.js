@@ -1,7 +1,14 @@
 'use strict'
 
 export default {
-  state: [], // initial state
+  state: [
+    {
+      title: 'gift1'
+    },
+    {
+      title: 'gift2'
+    }
+  ], // initial state
   reducers: {
     // handle state changes with pure functions
     add: (state, gift) => {

@@ -6,6 +6,7 @@ import withRematch from '../shared/utils/withRematch'
 import Header from '../shared/components/header'
 import OrgDisplay from '../shared/components/org-display'
 import VolunteerForm from '../shared/components/volunteer-form'
+import ListOf from '../shared/components/list-of'
 
 class Volunteers extends Component {
   constructor (props) {
@@ -18,14 +19,7 @@ class Volunteers extends Component {
       <div>
         <Header title='Les volontaires' />
         <VolunteerForm username={this.props.username} save={this.save} />
-        <h3>The count is {this.props.volunteers.length}</h3>
-        <ol>
-          {this.props.volunteers.map((x, i) => <li key={`volunteer-${i}`}>
-            {i} {x.title}
-            <br />
-            {JSON.stringify(x)}
-          </li>)}
-        </ol>
+        <ListOf items={this.props.volunteers} type='volunteers' />
         <hr />
         <OrgDisplay />
       </div>
