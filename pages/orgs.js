@@ -20,7 +20,6 @@ class Orgs extends Component {
         <Header title='Les Orgs' />
         <OrgForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.org} type='org' />
-        <hr />
         <OrgDisplay />
       </div>
     </section>

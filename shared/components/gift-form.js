@@ -30,32 +30,71 @@ class GiftForm extends Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Title:
-          <input required type='text' ref={(title) => { this.title = title }} />
-        </label>
-        <br />
-        <label>
-          Description:
-          <textarea rows='5' cols='40' ref={(description) => { this.description = description }} />
-        </label>
-        <br />
-        <label>
-          Estimé (heures):
-          <input type='text' ref={(estimate) => { this.estimate = estimate }} />
-        </label>
-        <br />
-        <label>
-          Catégorie:
-          <select ref={(category) => { this.category = category }}>
-            <option value=''>---</option>
-            <option>Cat #1</option>
-            <option>Cat #3</option>
-            <option>Cat #7</option>
-          </select>
-        </label>
-        <br />
-        <input type='submit' value='Submit' />
+        <div className='field is-horizontal'>
+          <div className='field-label is-normal'>
+            <label className='label'>Title</label>
+          </div>
+          <div className='field-body'>
+            <div className='field'>
+              <div className='control'>
+                <input className='input' required type='text' ref={(title) => { this.title = title }} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='field is-horizontal'>
+          <div className='field-label is-normal'>
+            <label className='label'>Description</label>
+          </div>
+          <div className='field-body'>
+            <div className='field'>
+              <div className='control'>
+                <textarea className='textarea' ref={(description) => { this.description = description }} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='field is-horizontal'>
+          <div className='field-label is-normal'>
+            <label className='label'>Estimé (heures)</label>
+          </div>
+          <div className='field-body'>
+            <div className='field'>
+              <div className='control'>
+                <input type='text' ref={(estimate) => { this.estimate = estimate }} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='field is-horizontal'>
+          <div className='field-label is-normal'>
+            <label className='label'>Catégorie</label>
+          </div>
+          <div className='field-body'>
+            <div className='field is-narrow'>
+              <div className='control'>
+                <div className='select is-fullwidth'>
+                  <select ref={(category) => { this.category = category }}>
+                    <option value=''>---</option>
+                    <option>Cat #1</option>
+                    <option>Cat #3</option>
+                    <option>Cat #7</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='field is-horizontal'>
+          <div className='field-label' />
+          <div className='field-body'>
+            <div className='field'>
+              <div className='control'>
+                <input className='button is-primary' type='submit' value='Submit' />
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     )
   }

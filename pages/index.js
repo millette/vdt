@@ -12,18 +12,17 @@ import OrgDisplay from '../shared/components/org-display'
 const Home = () => <section className='section'>
   <div className='container'>
     <Header title='Accueil' />
-    <nav class='level'>
-      <div class='level-item has-text-centered'>
+    <nav className='level'>
+      <div className='level-item has-text-centered'>
         <GiftSummary />
       </div>
-      <div class='level-item has-text-centered'>
+      <div className='level-item has-text-centered'>
         <OrgSummary />
       </div>
-      <div class='level-item has-text-centered'>
+      <div className='level-item has-text-centered'>
         <VolunteerSummary />
       </div>
     </nav>
-    <br />
     <OrgDisplay />
   </div>
 </section>

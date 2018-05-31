@@ -20,7 +20,6 @@ class Gifts extends Component {
         <Header title='Gifts' />
         <GiftForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.gift} type='gift' />
-        <hr />
         <OrgDisplay />
       </div>
     </section>

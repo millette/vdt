@@ -3,7 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const OrgDisplay = (props) => <div>
+const OrgDisplay = (props) => <div className='box'>
   <h3 className='title is-3'>Org Counter</h3>
   <p>
     This Org counter is connected via the <b>connect</b> function. Components
@@ -12,7 +12,7 @@ const OrgDisplay = (props) => <div>
   </p>
   <p>Current length {props.org.length} </p>
   <p>
-    <button onClick={props.add3.bind(props, props.username)}>Increment</button>
+    <button className='button' onClick={props.add3.bind(props, props.username)}>Increment</button>
   </p>
 </div>
 

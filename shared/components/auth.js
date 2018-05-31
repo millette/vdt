@@ -26,22 +26,34 @@ class Auth extends Component {
       : null
 
     const isLogged = this.props.name
-      ? <p>Hello {this.props.name}. <button type='button' onClick={this.onLogout}>Logout</button></p>
+      ? <p>Hello {this.props.name}. <button className='button' type='button' onClick={this.onLogout}>Logout</button></p>
       : <form onSubmit={this.onSubmit}>
-        <label>
-          Nom <input type='text' ref={(name) => { this.name = name }} />
-        </label>
-        <br />
-        <label>
-          Password <input type='password' ref={(pw) => { this.pw = pw }} />
-        </label>
-        <br />
-        <button>Login</button>
+        <div className='field is-horizontal'>
+          <div className='field-body'>
+            <div className='field'>
+              <p className='control'>
+                <input className='input' type='text' placeholder='Name' ref={(name) => { this.name = name }} />
+              </p>
+            </div>
+            <div className='field'>
+              <p className='control'>
+                <input className='input' type='password' placeholder='Password' ref={(pw) => { this.pw = pw }} />
+              </p>
+            </div>
+
+            <div className='field'>
+              <div className='control'>
+                <button className='button is-primary'>
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
 
     return (
       <div>
-        <h2>Auth</h2>
         {oups}
         {isLogged}
       </div>

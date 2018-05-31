@@ -20,7 +20,6 @@ class Volunteers extends Component {
         <Header title='Les volontaires' />
         <VolunteerForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.volunteers} type='volunteers' />
-        <hr />
         <OrgDisplay />
       </div>
     </section>
