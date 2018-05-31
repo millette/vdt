@@ -2,10 +2,11 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import Link from 'next/link'
 
 const OrgSummary = (props) => <div>
-  <h2>Org <small>sommaire</small></h2>
-  <p>{props.org.length} orgs.</p>
+  <h2 className='title is-4'>Org <small>sommaire</small></h2>
+  <p><Link href='/orgs'><a>{props.org.length} orgs</a></Link></p>
 </div>
 
 const mapState = (state) => ({

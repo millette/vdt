@@ -9,14 +9,23 @@ import OrgSummary from '../shared/components/org-summary'
 import VolunteerSummary from '../shared/components/volunteer-summary'
 import OrgDisplay from '../shared/components/org-display'
 
-const Home = () => <div>
-  <Header title='Accueil' />
-  <p>C’est comme ça.</p>
-  <GiftSummary />
-  <OrgSummary />
-  <VolunteerSummary />
-  <br />
-  <OrgDisplay />
-</div>
+const Home = () => <section className='section'>
+  <div className='container'>
+    <Header title='Accueil' />
+    <nav class='level'>
+      <div class='level-item has-text-centered'>
+        <GiftSummary />
+      </div>
+      <div class='level-item has-text-centered'>
+        <OrgSummary />
+      </div>
+      <div class='level-item has-text-centered'>
+        <VolunteerSummary />
+      </div>
+    </nav>
+    <br />
+    <OrgDisplay />
+  </div>
+</section>
 
 export default withRematch(initStore)(Home)

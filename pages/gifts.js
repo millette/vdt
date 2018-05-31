@@ -15,15 +15,15 @@ class Gifts extends Component {
   }
 
   render () {
-    return (
-      <div>
+    return <section className='section'>
+      <div className='container'>
         <Header title='Gifts' />
         <GiftForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.gift} type='gift' />
         <hr />
         <OrgDisplay />
       </div>
-    )
+    </section>
   }
 }
 

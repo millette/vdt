@@ -33,7 +33,7 @@ const Header = (props) => <div>
 
     </ul>
   </nav>
-  <h1>{props.title || ''}</h1>
+  <h1 className='title is-1'>{props.title || ''}</h1>
 </div>
 
 export default Header

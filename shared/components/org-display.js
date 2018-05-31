@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const OrgDisplay = (props) => <div>
-  <h3>Org Counter</h3>
+  <h3 className='title is-3'>Org Counter</h3>
   <p>
     This Org counter is connected via the <b>connect</b> function. Components
     which are not pages can be connected using the connect function just

@@ -15,15 +15,15 @@ class Volunteers extends Component {
   }
 
   render () {
-    return (
-      <div>
+    return <section className='section'>
+      <div className='container'>
         <Header title='Les volontaires' />
         <VolunteerForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.volunteers} type='volunteers' />
         <hr />
         <OrgDisplay />
       </div>
-    )
+    </section>
   }
 }
 
