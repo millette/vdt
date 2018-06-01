@@ -20,7 +20,7 @@ class GiftForm extends Component {
         this.title.form.reset()
         this.title.style.background = 'transparent'
       })
-      .catch((err) => {
+      .catch(() => {
         this.title.focus()
         this.title.style.background = 'pink'
       })
