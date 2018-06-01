@@ -21,7 +21,6 @@ class VolunteerForm extends Component {
         this.title.style.background = 'transparent'
       })
       .catch((err) => {
-        console.error(err.toString())
         this.title.focus()
         this.title.style.background = 'pink'
       })
