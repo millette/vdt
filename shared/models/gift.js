@@ -8,9 +8,8 @@ export default {
     {
       title: 'gift2'
     }
-  ], // initial state
+  ],
   reducers: {
-    // handle state changes with pure functions
     add: (state, gift) => {
       if (!gift.title) { throw new Error('Needed: title') }
       Object.keys(gift).forEach((k) => {
@@ -20,8 +19,6 @@ export default {
     }
   },
   effects: {
-    // handle state changes with impure functions.
-    // use async/await for async actions
     addAsync (payload, rootState) {
       return new Promise(resolve => setTimeout(resolve, 300))
         .then(() => this.add(payload))

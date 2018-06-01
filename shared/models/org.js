@@ -10,8 +10,6 @@ export default {
     }
   ],
   reducers: {
-    // handle state changes with pure functions
-    // add: (state, payload) => [...state, payload]
     add: (state, org) => {
       if (!org.title) { throw new Error('Needed: title') }
       Object.keys(org).forEach((k) => {
@@ -21,11 +19,9 @@ export default {
     }
   },
   effects: {
-    // handle state changes with impure functions.
-    // use async/await for async actions
     async addAsync (payload, rootState) {
       await new Promise(resolve => setTimeout(resolve, 200))
-      this.add(payload)
+      return this.add(payload)
     }
   }
 }
