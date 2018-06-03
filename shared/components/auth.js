@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Link from 'next/link'
 
 class Auth extends Component {
   constructor (props) {
@@ -26,7 +27,7 @@ class Auth extends Component {
       : null
 
     const isLogged = this.props.name
-      ? <p>Hello {this.props.name}. <button className='button' type='button' onClick={this.onLogout}>Logout</button></p>
+      ? <p>Hello <Link prefetch href='/me'><a>{this.props.name}</a></Link>. <button className='button' type='button' onClick={this.onLogout}>Logout</button></p>
       : <form onSubmit={this.onSubmit}>
         <div className='field is-horizontal'>
           <div className='field-body'>

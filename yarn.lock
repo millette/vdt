@@ -584,9 +584,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@rematch/core@^1.0.0-alpha.6":
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@rematch/core/-/core-1.0.0-alpha.6.tgz#cb32d70a408327baa51e6d806a47f58437cf69d2"
+"@rematch/core@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@rematch/core/-/core-1.0.0-alpha.7.tgz#81a7988062a776ef48a4bc3a16353e6e0b8f62f0"
   dependencies:
     redux "4.0.0"
 

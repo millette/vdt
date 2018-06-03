@@ -1,12 +1,12 @@
 'use strict'
 
 import React, { Component } from 'react'
-import { initStore } from '../shared/store'
-import withRematch from '../shared/utils/withRematch'
-import Header from '../shared/components/header'
-import OrgDisplay from '../shared/components/org-display'
-import OrgForm from '../shared/components/org-form'
-import ListOf from '../shared/components/list-of'
+import { initStore } from '../../shared/store'
+import withRematch from '../../shared/utils/withRematch'
+import Header from '../../shared/components/header'
+import OrgDisplay from '../../shared/components/org-display'
+import OrgForm from '../../shared/components/org-form'
+import ListOf from '../../shared/components/list-of'
 
 class Orgs extends Component {
   constructor (props) {

@@ -1,12 +1,12 @@
 'use strict'
 
 import React, { Component } from 'react'
-import { initStore } from '../shared/store'
-import withRematch from '../shared/utils/withRematch'
-import Header from '../shared/components/header'
-import OrgDisplay from '../shared/components/org-display'
-import GiftForm from '../shared/components/gift-form'
-import ListOf from '../shared/components/list-of'
+import { initStore } from '../../shared/store'
+import withRematch from '../../shared/utils/withRematch'
+import Header from '../../shared/components/header'
+import OrgDisplay from '../../shared/components/org-display'
+import GiftForm from '../../shared/components/gift-form'
+import ListOf from '../../shared/components/list-of'
 
 class Gifts extends Component {
   constructor (props) {
