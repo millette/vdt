@@ -7,6 +7,7 @@ import Header from '../../shared/components/header'
 import OrgDisplay from '../../shared/components/org-display'
 import OrgForm from '../../shared/components/org-form'
 import ListOf from '../../shared/components/list-of'
+import Summary from '../../shared/components/summary'
 
 class Orgs extends Component {
   constructor (props) {
@@ -18,6 +19,7 @@ class Orgs extends Component {
     return <section className='section'>
       <div className='container'>
         <Header title='Les Orgs' />
+        <Summary />
         <OrgForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.org} type='org' />
         <OrgDisplay />

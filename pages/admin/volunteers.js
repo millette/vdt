@@ -7,6 +7,7 @@ import Header from '../../shared/components/header'
 import OrgDisplay from '../../shared/components/org-display'
 import VolunteerForm from '../../shared/components/volunteer-form'
 import ListOf from '../../shared/components/list-of'
+import Summary from '../../shared/components/summary'
 
 class Volunteers extends Component {
   constructor (props) {
@@ -18,8 +19,9 @@ class Volunteers extends Component {
     return <section className='section'>
       <div className='container'>
         <Header title='Les volontaires' />
+        <Summary />
         <VolunteerForm username={this.props.username} save={this.save} />
-        <ListOf items={this.props.volunteers} type='volunteers' />
+        <ListOf items={this.props.volunteer} type='volunteer' />
         <OrgDisplay />
       </div>
     </section>
@@ -27,7 +29,7 @@ class Volunteers extends Component {
 }
 
 const mapState = (state) => ({
-  volunteers: state.volunteer,
+  volunteer: state.volunteer,
   username: state.auth.name
 })
 

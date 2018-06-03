@@ -7,6 +7,7 @@ import Header from '../../shared/components/header'
 import OrgDisplay from '../../shared/components/org-display'
 import GiftForm from '../../shared/components/gift-form'
 import ListOf from '../../shared/components/list-of'
+import Summary from '../../shared/components/summary'
 
 class Gifts extends Component {
   constructor (props) {
@@ -18,6 +19,7 @@ class Gifts extends Component {
     return <section className='section'>
       <div className='container'>
         <Header title='Gifts' />
+        <Summary />
         <GiftForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.gift} type='gift' />
         <OrgDisplay />
