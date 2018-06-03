@@ -15,7 +15,9 @@ const Home = () => <section className='section'>
           <h2>Les volontaires</h2>
           <p>Les volontaires peuvent:</p>
           <ul>
-            <li>Échanger des heures contre un cadeau</li>
+            <li>Faire un don</li>
+            <li>Échanger des heures confirmées contre un cadeau</li>
+            <li>Marquer leurs heures par org</li>
           </ul>
         </div>
       </div>
@@ -25,7 +27,7 @@ const Home = () => <section className='section'>
           <h2>Les donateurs</h2>
           <p>Les donateurs peuvent:</p>
           <ul>
-            <li>Échanger des heures contre un cadeau</li>
+            <li>Faire un don</li>
           </ul>
         </div>
       </div>
@@ -35,7 +37,9 @@ const Home = () => <section className='section'>
           <h2>Les orgs</h2>
           <p>Les orgs peuvent:</p>
           <ul>
-            <li>Échanger des heures contre un cadeau</li>
+            <li>Faire un don</li>
+            <li>Confirmer les heures des volontaires</li>
+            <li>Marquer les heures des volontaires</li>
           </ul>
         </div>
       </div>

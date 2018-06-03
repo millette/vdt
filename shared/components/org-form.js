@@ -12,10 +12,8 @@ class OrgForm extends Component {
     event.preventDefault()
     const title = this.title.value && this.title.value.trim()
     const description = this.description.value && this.description.value.trim()
-    const estimate = this.estimate.value && parseFloat(this.estimate.value)
-    const category = this.category.value && this.category.value.trim()
 
-    return this.props.save({ username: this.props.username, title, description, estimate, category })
+    return this.props.save({ username: this.props.username, title, description })
       .then(() => {
         this.title.form.reset()
         this.title.style.background = 'transparent'
@@ -49,37 +47,6 @@ class OrgForm extends Component {
             <div className='field'>
               <div className='control'>
                 <textarea className='textarea' ref={(description) => { this.description = description }} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='field is-horizontal'>
-          <div className='field-label is-normal'>
-            <label className='label'>Estimé (heures)</label>
-          </div>
-          <div className='field-body'>
-            <div className='field'>
-              <div className='control'>
-                <input type='text' ref={(estimate) => { this.estimate = estimate }} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='field is-horizontal'>
-          <div className='field-label is-normal'>
-            <label className='label'>Catégorie</label>
-          </div>
-          <div className='field-body'>
-            <div className='field is-narrow'>
-              <div className='control'>
-                <div className='select is-fullwidth'>
-                  <select ref={(category) => { this.category = category }}>
-                    <option value=''>---</option>
-                    <option>Cat #1</option>
-                    <option>Cat #3</option>
-                    <option>Cat #7</option>
-                  </select>
-                </div>
               </div>
             </div>
           </div>
