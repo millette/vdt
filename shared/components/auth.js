@@ -17,7 +17,7 @@ class Auth extends Component {
     if (!this.name.value) { return }
     this.setState({ error: this.pw.value ? false : 'Missing: password' })
     if (this.pw.value) {
-      this.props.login(this.name.value)
+      return this.props.loginAsync(this.name.value)
     }
   }
 
