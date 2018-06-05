@@ -14,9 +14,11 @@ const Me = (props) => {
     title = 'Mon profile: ' + props.username
     out = <div className='content'>
       <p>Salut {props.username}.</p>
+      <pre>{Object.keys(props).join(', ')}</pre>
+      <pre>{JSON.stringify(props, null, '  ')}</pre>
       <Summary />
       <Droits />
-      <p>Volontaire, donateur ou org? ({props.usertype})</p>
+      <p>Volontaire, donateur ou org? ({props.usertype} / #{props.userpos})</p>
     </div>
   } else {
     title = 'Please login'
@@ -37,7 +39,8 @@ const Me = (props) => {
 
 const mapState = state => ({
   username: state.auth.name,
-  usertype: state.auth.type
+  usertype: state.auth.type || 'N/A',
+  userpos: state.auth.pos
 })
 
 export default withRematch(initStore, mapState)(Me)
