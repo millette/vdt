@@ -4,6 +4,7 @@ export default {
   state: { },
   reducers: {
     login: (state, payload) => ({ ...state, ...payload }),
+    type: (state, type) => ({ ...state, type }),
     logout: (state) => ({ })
   },
   effects: {
