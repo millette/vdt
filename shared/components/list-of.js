@@ -22,7 +22,7 @@ const ListOf = (props) => {
 
   return <div>
     <h3 className='title is-3'>The count is {cnt}</h3>
-    <p>Got some? {(props.user && props.user.hours) || ''}</p>
+    {((props.type === 'gift') && props.user && props.user.hours) ? <p>Got some? {props.user.hours}</p> : ''}
     {allItems}
   </div>
 }
