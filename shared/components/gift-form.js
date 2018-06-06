@@ -19,10 +19,16 @@ class GiftForm extends Component {
       .then(() => {
         this.title.form.reset()
         this.title.style.background = 'transparent'
+        this.estimate.style.background = 'transparent'
       })
-      .catch(() => {
-        this.title.focus()
-        this.title.style.background = 'pink'
+      .catch((err) => {
+        // console.log('ERR:', err, err.field, '*')
+        if (err.field) {
+          this[err.field].focus()
+          this[err.field].style.background = 'pink'
+        } else {
+          console.error(err)
+        }
       })
   }
 
@@ -60,7 +66,7 @@ class GiftForm extends Component {
           <div className='field-body'>
             <div className='field'>
               <div className='control'>
-                <input type='text' ref={(estimate) => { this.estimate = estimate }} />
+                <input required type='text' ref={(estimate) => { this.estimate = estimate }} />
               </div>
             </div>
           </div>
