@@ -8,6 +8,7 @@ import OrgDisplay from '../../shared/components/org-display'
 import GiftForm from '../../shared/components/gift-form'
 import ListOf from '../../shared/components/list-of'
 import Summary from '../../shared/components/summary'
+import Link from 'next/link'
 
 class Gifts extends Component {
   constructor (props) {
@@ -19,6 +20,7 @@ class Gifts extends Component {
     return <section className='section'>
       <div className='container'>
         <Header title='Gifts' />
+        <p><Link href='/gifts' prefetch><a className='button'>Magasin</a></Link></p>
         <Summary />
         <GiftForm username={this.props.username} save={this.save} />
         <ListOf items={this.props.gift} type='gift' />

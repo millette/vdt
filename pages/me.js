@@ -6,12 +6,13 @@ import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 import Droits from '../shared/components/droits'
 import Summary from '../shared/components/summary'
+import ListOf from '../shared/components/list-of'
 
 const KnownUser = (props) => {
   if (props.usertype) {
     if (typeof props.userpos === 'number') {
       // fully known
-      return <p>Vous êtes le {props.usertype} #{props.userpos}.</p>
+      return <p>Vous êtes le {props.usertype} #{props.userpos} / {props.userhours}.</p>
     }
     return <p>Vous êtes un {props.usertype} inconnu.</p>
   }
@@ -41,7 +42,8 @@ const Me = (props) => {
       <p>Salut {props.username}.</p>
       <Summary />
       <Droits />
-      <KnownUser type={props.type} usertype={props.usertype} userpos={props.userpos} />
+      <KnownUser type={props.type} usertype={props.usertype} userpos={props.userpos} userhours={props.userhours} />
+      <ListOf own={true} items={props.gift} type='gift' />
     </div>
   } else {
     title = 'Please login'
@@ -61,9 +63,12 @@ const Me = (props) => {
 }
 
 const mapState = state => ({
+  gift: state.gift,
   username: state.auth.name,
   usertype: state.auth.type,
-  userpos: state.auth.pos
+  userpos: state.auth.pos,
+  userhours: state.auth.hours,
+  useritems: state.auth.items
 })
 
 const mapDispatch = ({ auth }) => auth
