@@ -12,9 +12,10 @@ export default {
     }
   ],
   reducers: {
-    buy: (state, b) => {
-      console.log('BUY-B:', b)
-      return state
+    buy: (state, { i, owner }) => {
+      const ret = state.slice()
+      ret[i].owner = owner
+      return ret
     },
     add: (state, gift) => {
       const err = new Error('Missing field')

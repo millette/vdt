@@ -3,10 +3,16 @@
 export default {
   state: [
     {
-      title: 'volunteer1'
+      title: 'volunteer1',
+      hours: 20
     },
     {
-      title: 'volunteer2'
+      title: 'volunteer2',
+      hours: 5
+    },
+    {
+      title: 'Robin',
+      hours: 50
     }
   ],
   reducers: {

@@ -22,13 +22,9 @@ class GiftForm extends Component {
         this.estimate.style.background = 'transparent'
       })
       .catch((err) => {
-        // console.log('ERR:', err, err.field, '*')
-        if (err.field) {
-          this[err.field].focus()
-          this[err.field].style.background = 'pink'
-        } else {
-          console.error(err)
-        }
+        if (!err.field) { return console.error('Unexpected', err) }
+        this[err.field].focus()
+        this[err.field].style.background = 'pink'
       })
   }
 

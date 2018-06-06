@@ -20,6 +20,11 @@ const Header = (props) => <div>
       </Link>
     </p>
     <p className='control'>
+      <Link href='/gifts' prefetch>
+        <a className='button'>Magasin</a>
+      </Link>
+    </p>
+    <p className='control'>
       <Link href='/admin/' prefetch>
         <a className='button'>Admin</a>
       </Link>
