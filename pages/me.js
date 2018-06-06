@@ -43,7 +43,7 @@ const Me = (props) => {
       <Summary />
       <Droits />
       <KnownUser type={props.type} usertype={props.usertype} userpos={props.userpos} userhours={props.userhours} />
-      <ListOf own={true} items={props.gift} type='gift' />
+      <ListOf own items={props.gift} type='gift' />
     </div>
   } else {
     title = 'Please login'

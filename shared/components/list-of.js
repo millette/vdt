@@ -3,13 +3,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const ListOf = (props) => <div>
-  <h3>The count is {props.items.length}</h3>
-  <p>Got some? {(props.user && props.user.hours) || ''}</p>
-  <div className='columns is-multiline'>
+const ListOf = (props) => {
+  let cnt = 0
+  const allItems = <div className='columns is-multiline'>
     {props.items.map((x, i) => {
       if (props.buy && x.owner) { return '' }
       if (props.own && (x.owner !== props.user.name)) { return '' }
+      ++cnt
       return <div className='column' key={`${props.type}-${i}`}>
         <div className='box'>
           {i} {x.title}
@@ -19,7 +19,13 @@ const ListOf = (props) => <div>
       </div>
     })}
   </div>
-</div>
+
+  return <div>
+    <h3 className='title is-3'>The count is {cnt}</h3>
+    <p>Got some? {(props.user && props.user.hours) || ''}</p>
+    {allItems}
+  </div>
+}
 
 const mapState = (state) => ({
   user: state.auth
