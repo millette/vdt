@@ -21,11 +21,11 @@ export default {
       const err = new Error('Missing field')
       if (!gift.title) {
         err.field = 'title'
-        throw err // new Error('Needed: title')
+        throw err
       }
       if (!gift.estimate) {
         err.field = 'estimate'
-        throw err // new Error('Needed: estimate')
+        throw err
       }
       Object.keys(gift).forEach((k) => {
         if (!gift[k]) { delete gift[k] }

@@ -27,11 +27,8 @@ const mapState = state => ({
 
 const mapDispatch = ({ auth: { buy }, gift: { buyAsync } }) => ({
   buy: ({ i, estimate, owner }) => {
-    console.log('i:', i)
-    console.log('estimate:', estimate)
     return buyAsync({ i, owner })
       .then((x) => {
-        console.log('X:', x, i, typeof x)
         buy({ i, estimate })
       })
   }
