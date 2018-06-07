@@ -12,9 +12,9 @@ class VolunteerForm extends Component {
     event.preventDefault()
     const title = this.title.value && this.title.value.trim()
     const description = this.description.value && this.description.value.trim()
-    const heures = this.heures.value && parseFloat(this.heures.value)
+    const hours = this.hours.value && parseFloat(this.hours.value)
 
-    return this.props.save({ username: this.props.username, title, description, heures })
+    return this.props.save({ username: this.props.username, title, description, hours })
       .then(() => {
         this.title.form.reset()
         this.title.style.background = 'transparent'
@@ -59,7 +59,7 @@ class VolunteerForm extends Component {
           <div className='field-body'>
             <div className='field'>
               <div className='control'>
-                <input type='text' ref={(heures) => { this.heures = heures }} />
+                <input type='text' ref={(hours) => { this.hours = hours }} />
               </div>
             </div>
           </div>
