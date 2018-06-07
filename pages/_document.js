@@ -20,6 +20,16 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <footer className='footer'>
+            <div className='container'>
+              <div className='content has-text-centered'>
+                <p>
+                  &copy;2018 <a href='http://robin.millette.info/'>Robin Millette</a><br />
+                  <a href='http://github.com/millette/vdt'>Sources</a>
+                </p>
+              </div>
+            </div>
+          </footer>
           <NextScript />
         </body>
       </html>
