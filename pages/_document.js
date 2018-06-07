@@ -24,8 +24,8 @@ export default class MyDocument extends Document {
             <div className='container'>
               <div className='content has-text-centered'>
                 <p>
-                  &copy;2018 <a href='http://robin.millette.info/'>Robin Millette</a><br />
-                  <a href='http://github.com/millette/vdt'>Sources</a>
+                  &copy;2018 <a target='_blank' href='http://robin.millette.info/'>Robin Millette</a><br />
+                  <a target='_blank' href='http://github.com/millette/vdt'>Sources</a>
                 </p>
               </div>
             </div>

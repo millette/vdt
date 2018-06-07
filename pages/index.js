@@ -5,7 +5,6 @@ import Header from '../shared/components/header'
 import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
 import Droits from '../shared/components/droits'
-import Summary from '../shared/components/summary'
 import Link from 'next/link'
 
 const Home = () => <section className='section'>
@@ -56,7 +55,6 @@ const Home = () => <section className='section'>
         </div>
       </div>
     </div>
-    <Summary />
   </div>
 </section>
 
