@@ -12,7 +12,7 @@ class Gifts extends Component {
     return <section className='section'>
       <div className='container'>
         <Header title='Magasin' />
-        <p>Bonjour {this.props.user.name}.</p>
+        {this.props.user.name ? <p>Bonjour {this.props.user.name}.</p> : '' }
         <p><Link href='/admin/gifts' prefetch><a className='button'>Admin magasin</a></Link></p>
         <ListOf items={this.props.gift} type='gift' buy={this.props.user.type === 'volunteer' && this.props.buy.bind(this)} />
       </div>

@@ -4,13 +4,13 @@ export default {
   state: { },
   reducers: {
     login: (state, payload) => ({ ...state, ...payload }),
-    type: (state, type) => ({ ...state, type }),
-    buy: (state, gg) => {
-      const hours = state.hours - gg.estimate
-      const items = state.items ? state.items.slice() : []
-      items.push(gg.i)
-      return ({ ...state, hours, items })
-    },
+    // give 15 hours by default to new volunteers
+    type: (state, type) => ({ ...state, type, hours: !state.hours && type === 'volunteer' && 15 }),
+    buy: (state, { estimate, i }) => ({
+      ...state,
+      hours: state.hours - estimate,
+      items: [...state.items || [], i]
+    }),
     logout: (state) => ({ })
   },
   effects: {

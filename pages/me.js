@@ -11,8 +11,8 @@ import ListOf from '../shared/components/list-of'
 const KnownUser = (props) => {
   if (props.usertype) {
     if (typeof props.userpos === 'number') {
-      // fully known
-      return <p>Vous êtes le {props.usertype} #{props.userpos} / {props.userhours}.</p>
+      if (props.userhours) { return <p>Vous êtes le {props.usertype} #{props.userpos} / {props.userhours}.</p> }
+      return <p>Vous êtes le {props.usertype} #{props.userpos}.</p>
     }
     return <p>Vous êtes un {props.usertype} inconnu.</p>
   }
@@ -43,7 +43,7 @@ const Me = (props) => {
       <Summary />
       <Droits />
       <KnownUser type={props.type} usertype={props.usertype} userpos={props.userpos} userhours={props.userhours} />
-      <ListOf own items={props.gift} type='gift' />
+      {props.usertype === 'volunteer' ? <ListOf own items={props.gift} type='gift' /> : '' }
     </div>
   } else {
     title = 'Please login'
