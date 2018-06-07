@@ -2979,6 +2979,12 @@ neo-async@^2.5.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
 
+next-build-id@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/next-build-id/-/next-build-id-2.0.1.tgz#a45f6360e1275f0583b03219f627f79baba7e5bf"
+  dependencies:
+    sywac "^1.2.0"
+
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
@@ -4226,6 +4232,10 @@ supports-color@^5.3.0:
 symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+
+sywac@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/sywac/-/sywac-1.2.0.tgz#b0a05c4e0f459918e8e42e0f55e1c1039a0e975c"
 
 table@4.0.2:
   version "4.0.2"

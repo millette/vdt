@@ -5,11 +5,12 @@
   "scripts": {
     "lint": "standard",
     "dev": "standard && next",
-    "build": "standard && next build",
+    "build": "standard && next build && next-build-id",
     "export": "next export",
     "start": "next start"
   },
   "devDependencies": {
+    "next-build-id": "^2.0.1",
     "standard": "^11.0.1"
   },
   "dependencies": {
