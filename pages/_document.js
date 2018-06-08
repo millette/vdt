@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
             </div>
           </footer>
           <NextScript />
+          <script src='/static/js/nav.js' />
         </body>
       </html>
     )
