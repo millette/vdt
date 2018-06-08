@@ -18,7 +18,7 @@ const Home = () => <Fragment>
             <p>
               <b>ATTENTION</b> Pour tester ce site, ne rechargez pas la page
               à moins de vouloir remettre les valeurs à neufs.
-              Les données ne sont ni transmises, ni sauvegardées.
+              Les données ne sont ni transmises, ni sauvegardées.{' '}
               <b>Il ne s’agit que d’une démonstration</b>.
             </p>
           </div>
@@ -46,11 +46,12 @@ const Home = () => <Fragment>
           <div className='column'>
             <h2>À faire</h2>
             <ul>
-              <li>Confirmer les heures des volontaires (org)</li>
               <li>Marquer les heures des volontaires (org)</li>
+              <li>Déplacer login dans navbar</li>
+              <li>Confirmer les heures des volontaires (org)</li>
               <li>Marquer leurs heures par org (volontaire)</li>
               <li>Logout (update volontaires)</li>
-              <li>Backend (base de données)</li>
+              <li>Backend éventuel (base de données)</li>
             </ul>
           </div>
         </div>
