@@ -1,6 +1,6 @@
 'use strict'
 
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { initStore } from '../../shared/store'
 import withRematch from '../../shared/utils/withRematch'
 import Header from '../../shared/components/header'
@@ -16,15 +16,17 @@ class Volunteers extends Component {
   }
 
   render () {
-    return <section className='section'>
-      <div className='container'>
-        <Header title='Les volontaires' />
-        <Summary />
-        <VolunteerForm username={this.props.username} save={this.save} />
-        <ListOf items={this.props.volunteer} type='volunteer' />
-        <OrgDisplay />
-      </div>
-    </section>
+    return <Fragment>
+      <Header title='Les volontaires' />
+      <section className='section'>
+        <div className='container'>
+          <Summary />
+          <VolunteerForm username={this.props.username} save={this.save} />
+          <ListOf items={this.props.volunteer} type='volunteer' />
+          <OrgDisplay />
+        </div>
+      </section>
+    </Fragment>
   }
 }
 
