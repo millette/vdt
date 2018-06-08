@@ -39,7 +39,7 @@ const Home = () => <Fragment>
             <p>
               Quand un volontaire échange des heures pour un <i>gift</i>,
               ce dernier disparait du magasin mais sera visible
-              sur le profil du volontaire et sur l’admin des <i>gifts</i>
+              sur le profil du volontaire et sur l’admin des <i>gifts</i>{' '}
               et le temps sera débité du profil du volontaire.
             </p>
           </div>
