@@ -36,7 +36,7 @@ export default {
         err.field = 'volunteer'
         throw err
       }
-      ret[idx].hours += hours
+      ret[idx].hours += parseFloat(hours)
       return ret
     }
   },
