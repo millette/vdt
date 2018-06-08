@@ -29,7 +29,7 @@ const Droits = () => <div className='columns'>
       <p>Les volontaires peuvent:</p>
       <ul>
         <li>Faire un don ✔</li>
-        <li>Échanger des heures confirmées contre un cadeau ✔</li>
+        <li>Échanger des heures confirmées contre un <i>gift</i> ✔</li>
         <li>Marquer leurs heures par org</li>
       </ul>
     </div>

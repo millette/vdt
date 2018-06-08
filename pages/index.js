@@ -32,7 +32,7 @@ const Home = () => <Fragment>
               les <Link href='/admin/volunteers' prefetch><a>volontaires</a></Link>.
             </p>
             <p>
-              N’importe qui peut (pour le moment) créer des trucs
+              N’importe qui peut (pour le moment) créer des items
               (<i>gift</i>, volontaire, org) et seul un volontaire
               peut échanger des heures contre un <i>gift</i>.
             </p>
@@ -44,7 +44,7 @@ const Home = () => <Fragment>
             </p>
           </div>
           <div className='column'>
-            <h2>À faire</h2>
+            <h2>Roadmap (pour Robin)</h2>
             <ul>
               <li>Déplacer login dans navbar</li>
               <li>Confirmer les heures des volontaires (org)</li>
