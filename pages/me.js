@@ -1,6 +1,6 @@
 'use strict'
 
-import React from 'react'
+import React, { Fragment } from 'react'
 import Header from '../shared/components/header'
 import { initStore } from '../shared/store'
 import withRematch from '../shared/utils/withRematch'
@@ -53,12 +53,14 @@ const Me = (props) => {
   }
 
   return (
-    <section className='section'>
-      <div className='container'>
-        <Header title={title} />
-        {out}
-      </div>
-    </section>
+    <Fragment>
+      <Header title={title} />
+      <section className='section'>
+        <div className='container'>
+          {out}
+        </div>
+      </section>
+    </Fragment>
   )
 }
 
