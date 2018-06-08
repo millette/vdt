@@ -8,8 +8,9 @@
     "build": "standard && next build && next-build-id",
     "export": "next export",
     "start": "next start",
-    "now": "cd out && now --static --public --name vdt && cd -",
-    "clean": "rm -fr out .next"
+    "now666": "now out --static --public --name vdt",
+    "clean": "rm -fr out .next",
+    "all": "standard && rm -fr out .next && next build && next-build-id && next export"
   },
   "devDependencies": {
     "next-build-id": "^2.0.1",
