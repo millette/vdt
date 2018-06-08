@@ -13,6 +13,7 @@ const Header = (props) => <Fragment>
       <div className='container'>
         <Auth />
         <h1 className='title is-1'>{props.title || ''}</h1>
+        {props.subtitle ? <h1 className='subtitle is-2'>{props.subtitle || ''}</h1> : ''}
       </div>
     </div>
   </section>

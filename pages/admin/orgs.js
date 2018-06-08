@@ -17,7 +17,7 @@ class Orgs extends Component {
 
   render () {
     return <Fragment>
-      <Header title='Les Orgs' />
+      <Header title='Admin' subtitle='Les Orgs' />
       <section className='section'>
         <div className='container'>
           <Summary />

@@ -17,7 +17,7 @@ class Volunteers extends Component {
 
   render () {
     return <Fragment>
-      <Header title='Les volontaires' />
+      <Header title='Admin' subtitle='Les volontaires' />
       <section className='section'>
         <div className='container'>
           <Summary />

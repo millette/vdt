@@ -18,7 +18,7 @@ class Gifts extends Component {
 
   render () {
     return <Fragment>
-      <Header title='Gifts' />
+      <Header title='Admin' subtitle='Gifts' />
       <section className='section'>
         <div className='container'>
           <p><Link href='/gifts' prefetch><a className='button'>Magasin</a></Link></p>
