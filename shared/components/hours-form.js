@@ -70,12 +70,12 @@ class HoursForm extends Component {
         volunteerError: false
       }))
       .catch((err) => {
-        // indicate where the error is in the form
-        console.error(err.toString(), err.field)
         if (err.field === 'volunteer') {
           this.setState({ volunteerError: true })
         } else if (err.field === 'hours') {
           this.setState({ hoursError: true })
+        } else {
+          console.error(err.toString(), err.field)
         }
       })
   }

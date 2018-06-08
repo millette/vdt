@@ -35,7 +35,6 @@ export default {
         const err = new Error('Name not found')
         err.field = 'volunteer'
         throw err
-
       }
       ret[idx].hours += hours
       return ret
