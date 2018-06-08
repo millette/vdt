@@ -18,8 +18,8 @@ const Droits = () => <div className='columns'>
       <p>Les orgs peuvent:</p>
       <ul>
         <li>Faire un don ✔</li>
+        <li>Marquer les heures des volontaires ✔</li>
         <li>Confirmer les heures des volontaires</li>
-        <li>Marquer les heures des volontaires</li>
       </ul>
     </div>
   </div>

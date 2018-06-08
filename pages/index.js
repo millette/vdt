@@ -46,7 +46,6 @@ const Home = () => <Fragment>
           <div className='column'>
             <h2>À faire</h2>
             <ul>
-              <li>Marquer les heures des volontaires (org)</li>
               <li>Déplacer login dans navbar</li>
               <li>Confirmer les heures des volontaires (org)</li>
               <li>Marquer leurs heures par org (volontaire)</li>
