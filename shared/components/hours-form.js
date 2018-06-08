@@ -100,7 +100,6 @@ class HoursForm extends Component {
       {this.state.message ? <article className='message'>
         <div className='message-header'>
           <p>Attention</p>
-          <button className='delete' aria-label='delete'></button>
         </div>
         <div className='message-body'>
           {this.state.message}
