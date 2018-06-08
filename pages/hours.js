@@ -22,7 +22,7 @@ class Hours extends Component {
   render () {
     const body = this.props.user.type === 'org'
       ? <Fragment>
-        <p><Link prefetch href='/admin/orgs'><a className='button'>Admin orgs</a></Link></p>
+        <p><Link prefetch href='/admin/volunteers'><a className='button'>Admin volontaires</a></Link></p>
         <HoursForm handleSubmit={this.handleSubmit} volunteer={this.props.volunteer} user={this.props.user} />
       </Fragment>
       : <p>Seuls les <i>orgs</i> peuvent ajouter des heures aux volontaires.</p>
