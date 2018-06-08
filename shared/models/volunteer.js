@@ -22,6 +22,13 @@ export default {
         if (!volunteer[k]) { delete volunteer[k] }
       })
       return [...state, volunteer]
+    },
+    addVolHours: (state, { volunteer, hours }) => {
+      const ret = state.slice()
+      const idx = ret.findIndex((x) => x.title.toLowerCase() === volunteer.toLowerCase())
+      if (idx === -1) { throw new Error('Name not found') }
+      ret[idx].hours += hours
+      return ret
     }
   },
   effects: {

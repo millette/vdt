@@ -11,6 +11,12 @@ export default {
       hours: state.hours - estimate,
       items: [...state.items || [], i]
     }),
+    addOrgHours: (state, payload) => {
+      return {
+        ...state,
+        items: [...state.items || [], payload]
+      }
+    },
     logout: (state) => ({ })
   },
   effects: {
