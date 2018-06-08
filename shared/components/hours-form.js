@@ -11,7 +11,8 @@ class HoursForm extends Component {
       hours: '',
       description: '',
       hoursError: false,
-      volunteerError: false
+      volunteerError: false,
+      message: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeTitle = this.handleChange.bind(this, 'title')
@@ -19,6 +20,7 @@ class HoursForm extends Component {
     this.handleChangeHours = this.handleChange.bind(this, 'hours')
     this.handleChangeVolunteer = this.handleChangeVolunteer.bind(this)
     this.handleBlurHours = this.handleBlurHours.bind(this)
+    this.handleBlurVolunteer = this.handleBlurVolunteer.bind(this)
   }
 
   beginsWith (prefix) {
@@ -39,6 +41,16 @@ class HoursForm extends Component {
     return a1.slice(0, i)
   }
 
+  handleBlurVolunteer (event) {
+    console.log('handleBlurVolunteer')
+    const idx = this.props.volunteer
+      .map((x) => x.title.toLowerCase())
+      .indexOf(this.state.volunteer.toLowerCase())
+    if (idx === -1) {
+      this.setState({ message: `Volontaire introuvable: ${this.state.volunteer}` })
+    }
+  }
+
   handleBlurHours (event) {
     this.setState({ hours: parseFloat(event.target.value.replace(/,/, '.')) || '' })
   }
@@ -46,6 +58,7 @@ class HoursForm extends Component {
   handleChangeVolunteer (event) {
     // magic autocomplete
     this.setState({
+      message: false,
       volunteer: (!(this.state.volunteer.length > event.target.value.length) &&
       this.sharedStart(this.beginsWith(event.target.value))) ||
       event.target.value
@@ -53,7 +66,7 @@ class HoursForm extends Component {
   }
 
   handleChange (it, event) {
-    const obj = { }
+    const obj = { message: false }
     obj[it] = event.target.value
     this.setState(obj)
   }
@@ -67,7 +80,8 @@ class HoursForm extends Component {
         hours: '',
         description: '',
         hoursError: false,
-        volunteerError: false
+        volunteerError: false,
+        message: `Ajouté ${this.state.hours} à ${this.state.volunteer}`
       }))
       .catch((err) => {
         if (err.field === 'volunteer') {
@@ -82,7 +96,16 @@ class HoursForm extends Component {
 
   render () {
     return <form onSubmit={this.handleSubmit}>
-      <p>Hello {this.props.user.name}</p>.
+      <p>Hello {this.props.user.name}.</p>
+      {this.state.message ? <article className='message'>
+        <div className='message-header'>
+          <p>Attention</p>
+          <button className='delete' aria-label='delete'></button>
+        </div>
+        <div className='message-body'>
+          {this.state.message}
+        </div>
+      </article> : ''}
       <div className='field is-horizontal'>
         <div className='field-label is-normal'>
           <label className='label'>Title</label>
@@ -102,7 +125,7 @@ class HoursForm extends Component {
         <div className='field-body'>
           <div className='field'>
             <div className='control'>
-              <input className={`input${this.state.volunteerError ? ' is-danger' : ''}`} required type='text' value={this.state.volunteer} onChange={this.handleChangeVolunteer} />
+              <input className={`input${this.state.volunteerError ? ' is-danger' : ''}`} required type='text' value={this.state.volunteer} onChange={this.handleChangeVolunteer} onBlur={this.handleBlurVolunteer} />
             </div>
           </div>
         </div>
