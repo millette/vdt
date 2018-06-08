@@ -12,7 +12,8 @@ class HoursForm extends Component {
       description: '',
       hoursError: false,
       volunteerError: false,
-      message: ''
+      added: '',
+      found: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeTitle = this.handleChange.bind(this, 'title')
@@ -20,7 +21,7 @@ class HoursForm extends Component {
     this.handleChangeHours = this.handleChange.bind(this, 'hours')
     this.handleChangeVolunteer = this.handleChangeVolunteer.bind(this)
     this.handleBlurHours = this.handleBlurHours.bind(this)
-    this.handleBlurVolunteer = this.handleBlurVolunteer.bind(this)
+    // this.handleBlurVolunteer = this.handleBlurVolunteer.bind(this)
   }
 
   beginsWith (prefix) {
@@ -41,15 +42,17 @@ class HoursForm extends Component {
     return a1.slice(0, i)
   }
 
+  /*
   handleBlurVolunteer (event) {
     console.log('handleBlurVolunteer')
     const idx = this.props.volunteer
       .map((x) => x.title.toLowerCase())
       .indexOf(this.state.volunteer.toLowerCase())
     if (idx === -1) {
-      this.setState({ message: `Volontaire introuvable: ${this.state.volunteer}` })
+      this.setState({ message:  })
     }
   }
+  */
 
   handleBlurHours (event) {
     this.setState({ hours: parseFloat(event.target.value.replace(/,/, '.')) || '' })
@@ -57,23 +60,38 @@ class HoursForm extends Component {
 
   handleChangeVolunteer (event) {
     // magic autocomplete
-    this.setState({
-      message: false,
-      volunteer: (!(this.state.volunteer.length > event.target.value.length) &&
+    const volunteer = (!(this.state.volunteer.length > event.target.value.length) &&
       this.sharedStart(this.beginsWith(event.target.value))) ||
       event.target.value
-    })
+
+    const idx = this.props.volunteer
+      .map((x) => x.title.toLowerCase())
+      .indexOf(volunteer.toLowerCase())
+
+    let found
+    if (volunteer) {
+      if (idx === -1) {
+        found = <p className='help is-danger'>Volontaire introuvable</p>
+      } else {
+        found = <p className='help is-success'>Volontaire trouvé</p>
+      }
+    } else {
+      found = ''
+    }
+    this.setState({ added: '', found, volunteer })
   }
 
   handleChange (it, event) {
-    const obj = { message: false }
+    const obj = { added: '' }
     obj[it] = event.target.value
     this.setState(obj)
   }
 
   handleSubmit (event) {
     event.preventDefault()
-    this.props.handleSubmit(this.state)
+    const s = { ...this.state }
+    s.hours = parseFloat(s.hours)
+    this.props.handleSubmit(s)
       .then(() => this.setState({
         title: '',
         volunteer: '',
@@ -81,7 +99,8 @@ class HoursForm extends Component {
         description: '',
         hoursError: false,
         volunteerError: false,
-        message: `Ajouté ${this.state.hours} à ${this.state.volunteer}`
+        added: `Ajouté ${this.state.hours} heures à ${this.state.volunteer}.`,
+        found: ''
       }))
       .catch((err) => {
         if (err.field === 'volunteer') {
@@ -97,12 +116,12 @@ class HoursForm extends Component {
   render () {
     return <form onSubmit={this.handleSubmit}>
       <p>Hello {this.props.user.name}.</p>
-      {this.state.message ? <article className='message'>
+      {this.state.added ? <article className='message'>
         <div className='message-header'>
           <p>Attention</p>
         </div>
         <div className='message-body'>
-          {this.state.message}
+          {this.state.added}
         </div>
       </article> : ''}
       <div className='field is-horizontal'>
@@ -124,8 +143,9 @@ class HoursForm extends Component {
         <div className='field-body'>
           <div className='field'>
             <div className='control'>
-              <input className={`input${this.state.volunteerError ? ' is-danger' : ''}`} required type='text' value={this.state.volunteer} onChange={this.handleChangeVolunteer} onBlur={this.handleBlurVolunteer} />
+              <input className={`input${this.state.volunteerError ? ' is-danger' : ''}`} required type='text' value={this.state.volunteer} onChange={this.handleChangeVolunteer} />
             </div>
+            {this.state.found}
           </div>
         </div>
       </div>
