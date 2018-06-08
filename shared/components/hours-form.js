@@ -9,7 +9,9 @@ class HoursForm extends Component {
       title: '',
       volunteer: '',
       hours: '',
-      description: ''
+      description: '',
+      hoursError: false,
+      volunteerError: false
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeTitle = this.handleChange.bind(this, 'title')
@@ -59,12 +61,23 @@ class HoursForm extends Component {
   handleSubmit (event) {
     event.preventDefault()
     this.props.handleSubmit(this.state)
-    this.setState({
-      title: '',
-      volunteer: '',
-      hours: '',
-      description: ''
-    })
+      .then(() => this.setState({
+        title: '',
+        volunteer: '',
+        hours: '',
+        description: '',
+        hoursError: false,
+        volunteerError: false
+      }))
+      .catch((err) => {
+        // indicate where the error is in the form
+        console.error(err.toString(), err.field)
+        if (err.field === 'volunteer') {
+          this.setState({ volunteerError: true })
+        } else if (err.field === 'hours') {
+          this.setState({ hoursError: true })
+        }
+      })
   }
 
   render () {
@@ -89,7 +102,7 @@ class HoursForm extends Component {
         <div className='field-body'>
           <div className='field'>
             <div className='control'>
-              <input className='input' required type='text' value={this.state.volunteer} onChange={this.handleChangeVolunteer} />
+              <input className={`input${this.state.volunteerError ? ' is-danger' : ''}`} required type='text' value={this.state.volunteer} onChange={this.handleChangeVolunteer} />
             </div>
           </div>
         </div>
@@ -101,7 +114,7 @@ class HoursForm extends Component {
         <div className='field-body'>
           <div className='field'>
             <div className='control'>
-              <input className='input' required type='text' value={this.state.hours} onChange={this.handleChangeHours} onBlur={this.handleBlurHours} />
+              <input className={`input${this.state.hoursError ? ' is-danger' : ''}`} required type='text' value={this.state.hours} onChange={this.handleChangeHours} onBlur={this.handleBlurHours} />
             </div>
           </div>
         </div>

@@ -16,7 +16,6 @@ class Hours extends Component {
   handleSubmit (a) {
     return this.props.addVolHours(a)
       .then(() => this.props.addOrgHours(a))
-      .catch((err) => console.error(err))
   }
 
   render () {
