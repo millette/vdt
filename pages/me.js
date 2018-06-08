@@ -11,8 +11,13 @@ import ListOf from '../shared/components/list-of'
 const KnownUser = (props) => {
   if (props.usertype) {
     if (typeof props.userpos === 'number') {
-      if (props.userhours) { return <p>Vous êtes le {props.usertype} #{props.userpos} / {props.userhours}.</p> }
-      return <p>Vous êtes le {props.usertype} #{props.userpos}.</p>
+      if (props.userhours) {
+        return <p>Vous êtes le {props.usertype} #{props.userpos} / {props.userhours}.</p>
+      }
+      return <Fragment>
+        <p>Vous êtes le {props.usertype} #{props.userpos}.</p>
+        <pre>{JSON.stringify(props.useritems, null, '  ')}</pre>
+      </Fragment>
     }
     return <p>Vous êtes un {props.usertype} inconnu.</p>
   }
@@ -42,7 +47,7 @@ const Me = (props) => {
       <p>Salut {props.username}.</p>
       <Summary />
       <Droits />
-      <KnownUser type={props.type} usertype={props.usertype} userpos={props.userpos} userhours={props.userhours} />
+      <KnownUser type={props.type} useritems={props.useritems} usertype={props.usertype} userpos={props.userpos} userhours={props.userhours} />
       {props.usertype === 'volunteer' ? <ListOf own items={props.gift} type='gift' /> : '' }
     </div>
   } else {
