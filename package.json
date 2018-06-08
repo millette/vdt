@@ -8,7 +8,7 @@
     "build": "standard && next build && next-build-id",
     "export": "next export",
     "start": "next start",
-    "now": "now deploy out --static --public --name vdt",
+    "now": "cd out && now --static --public --name vdt && cd -",
     "clean": "rm -fr out .next"
   },
   "devDependencies": {
