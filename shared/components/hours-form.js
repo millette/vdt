@@ -89,9 +89,13 @@ class HoursForm extends Component {
 
   handleSubmit (event) {
     event.preventDefault()
-    const s = { ...this.state }
-    s.hours = parseFloat(s.hours)
-    this.props.handleSubmit(s)
+
+    this.props.handleSubmit({
+      hours: parseFloat(this.state.hours),
+      title: this.state.title,
+      volunteer: this.state.volunteer,
+      description: this.state.description
+    })
       .then(() => this.setState({
         title: '',
         volunteer: '',
