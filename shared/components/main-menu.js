@@ -7,12 +7,10 @@ class MainMenu extends Component {
   constructor (props) {
     super(props)
     this.state = { active: false }
+    this.toggleActive = this.toggle.bind(this)
   }
 
-  toggle (ev, b) {
-    // // console.log('REF', this.refs.navMenu)
-    // console.log('TOGGLE', ev.target)
-    // console.log('ACTIVE', this.state.active)
+  toggle () {
     this.setState({ active: !this.state.active })
   }
 
@@ -21,7 +19,7 @@ class MainMenu extends Component {
       <div className='container'>
         <div className='navbar-brand'>
           <Link href='/' prefetch><a className='navbar-item'>Accueil</a></Link>
-          <button role='button' onClick={this.toggle.bind(this)} className={`navbar-burger${this.state.active ? ' is-active' : ''}`} aria-label='menu' aria-expanded='false'>
+          <button role='button' onClick={this.toggleActive} className={`navbar-burger${this.state.active ? ' is-active' : ''}`} aria-label='menu' aria-expanded='false'>
             <span aria-hidden />
             <span aria-hidden />
             <span aria-hidden />
