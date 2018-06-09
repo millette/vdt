@@ -20,16 +20,13 @@ const sharedStart = (theSet) => {
 export const autocompleteVolunteer = (len, value, vol) => {
   const volunteer = (!(len > value.length) && sharedStart(beginsWith(vol, value))) || value
   const idx = vol.map((x) => x.title.toLowerCase()).indexOf(volunteer.toLowerCase())
-  let found
-  if (volunteer) {
-    if (idx === -1) {
-      found = <p className='help is-danger'>Volontaire introuvable</p>
-    } else {
-      found = <p className='help is-success'>Volontaire trouvé</p>
-    }
-  } else {
-    found = ''
+  return {
+    found: volunteer
+      ? (idx === -1
+        ? <p className='help is-danger'>Volontaire introuvable</p>
+        : <p className='help is-success'>Volontaire trouvé</p>)
+      : '',
+    volunteer,
+    added: ''
   }
-
-  return { volunteer, found, added: '' }
 }
