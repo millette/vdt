@@ -50,6 +50,7 @@ const Home = () => <Fragment>
               <li>Confirmer les heures des volontaires (org)</li>
               <li>Marquer leurs heures par org (volontaire)</li>
               <li>Logout (update volontaires)</li>
+              <li><i>Franglais much?</i></li>
               <li>Backend éventuel (base de données)</li>
             </ul>
           </div>
