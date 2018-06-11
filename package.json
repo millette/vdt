@@ -13,12 +13,13 @@
     "all": "standard && rm -fr out .next && next build && next-build-id && next export"
   },
   "devDependencies": {
+    "webpack": "^3.12.0",
     "next-build-id": "^2.0.1",
     "next-progressbar": "^1.0.0",
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "@rematch/core": "^1.0.0-alpha.7",
+    "@rematch/core": "1.0.0-alpha.9",
     "detect-node": "^2.0.3",
     "next": "^6.0.3",
     "react": "^16.4.0",
