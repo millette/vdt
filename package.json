@@ -13,7 +13,7 @@
     "all": "standard && rm -fr out .next && next build && next-build-id && next export"
   },
   "devDependencies": {
-    "webpack": "^3.12.0",
+    "webpack": "3.10.0",
     "next-build-id": "^2.0.1",
     "next-progressbar": "^1.0.0",
     "standard": "^11.0.1"
