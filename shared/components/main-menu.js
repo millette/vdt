@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import Link from 'next/link'
+import Auth from './auth'
 
 class MainMenu extends Component {
   constructor (props) {
@@ -29,9 +30,11 @@ class MainMenu extends Component {
           <div className='navbar-start'>
             <Link href='/gifts' prefetch><a className='navbar-item'>Magasin</a></Link>
             <Link href='/hours' prefetch><a className='navbar-item'>Heures</a></Link>
+            <div className='navbar-item'>|</div>
+            <Link href='/admin' prefetch><a className='navbar-item'>Admin</a></Link>
           </div>
           <div className='navbar-end'>
-            <Link href='/admin' prefetch><a className='navbar-item'>Admin</a></Link>
+            <Auth />
           </div>
         </div>
       </div>

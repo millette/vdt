@@ -4,6 +4,36 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'next/link'
 
+const IsLogged = ({self}) => (
+  self.props.name
+    ? <div className='navbar-item'>
+      Hello&nbsp;<Link prefetch href='/me'><a>{self.props.name}</a></Link>&nbsp;<button className='button is-warning' type='button' onClick={self.onLogout}>Logout</button>
+    </div>
+    : <div className='field is-horizontal navbar-item'>
+      <form onSubmit={self.onSubmit}>
+        <div className='field-body'>
+          <div className='field'>
+            <p className='control'>
+              <input className='input' type='text' placeholder='Name' ref={(name) => { self.name = name }} />
+            </p>
+          </div>
+          <div className='field'>
+            <p className='control'>
+              <input className='input' type='password' placeholder='Password' ref={(pw) => { self.pw = pw }} />
+            </p>
+          </div>
+          <div className='field'>
+            <div className='control'>
+              <button className='button is-info'>
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+)
+
 class Auth extends Component {
   constructor (props) {
     super(props)
@@ -26,37 +56,10 @@ class Auth extends Component {
       ? <p>{this.state.error}</p>
       : null
 
-    const isLogged = this.props.name
-      ? <p>Hello <Link prefetch href='/me'><a>{this.props.name}</a></Link>. <button className='button' type='button' onClick={this.onLogout}>Logout</button></p>
-      : <form onSubmit={this.onSubmit}>
-        <div className='field is-horizontal'>
-          <div className='field-body'>
-            <div className='field'>
-              <p className='control'>
-                <input className='input' type='text' placeholder='Name' ref={(name) => { this.name = name }} />
-              </p>
-            </div>
-            <div className='field'>
-              <p className='control'>
-                <input className='input' type='password' placeholder='Password' ref={(pw) => { this.pw = pw }} />
-              </p>
-            </div>
-
-            <div className='field'>
-              <div className='control'>
-                <button className='button is-primary'>
-                  Login
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-
     return (
       <div>
         {oups}
-        {isLogged}
+        <IsLogged self={this} />
       </div>
     )
   }

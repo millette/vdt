@@ -46,7 +46,6 @@ const Home = () => <Fragment>
           <div className='column'>
             <h2>Roadmap (pour Robin)</h2>
             <ul>
-              <li>Déplacer login dans navbar</li>
               <li>Confirmer les heures des volontaires (org)</li>
               <li>Marquer leurs heures par org (volontaire)</li>
               <li>Logout (update volontaires)</li>
