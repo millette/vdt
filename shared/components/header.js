@@ -1,11 +1,9 @@
 'use strict'
 
 import React, { Fragment } from 'react'
-// import Auth from './auth'
 import Head from 'next/head'
 import MainMenu from './main-menu'
 
-// <Auth /> au dessus de <h1>
 const Header = (props) => <Fragment>
   {props.title ? <Head><title>{props.title}</title></Head> : ''}
   <MainMenu />

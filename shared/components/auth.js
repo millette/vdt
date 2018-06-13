@@ -1,14 +1,15 @@
 'use strict'
 
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'next/link'
 
 const IsLogged = ({self}) => (
   self.props.name
-    ? <div className='navbar-item'>
-      Hello&nbsp;<Link prefetch href='/me'><a>{self.props.name}</a></Link>&nbsp;<button className='button is-warning' type='button' onClick={self.onLogout}>Logout</button>
-    </div>
+    ? <Fragment>
+      <Link prefetch href='/me'><a className='navbar-item'>{`Profile ${self.props.name}`}</a></Link>
+      <a className='navbar-item' onClick={self.onLogout}>Logout</a>
+    </Fragment>
     : <div className='field is-horizontal navbar-item'>
       <form onSubmit={self.onSubmit}>
         <div className='field-body'>
@@ -53,14 +54,14 @@ class Auth extends Component {
 
   render () {
     const oups = this.state.error
-      ? <p>{this.state.error}</p>
+      ? <div className='navbar-item'>{this.state.error}</div>
       : null
 
     return (
-      <div>
+      <Fragment>
         {oups}
         <IsLogged self={this} />
-      </div>
+      </Fragment>
     )
   }
 }
