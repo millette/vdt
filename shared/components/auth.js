@@ -7,8 +7,8 @@ import Link from 'next/link'
 const IsLogged = ({self}) => (
   self.props.name
     ? <Fragment>
-      <Link prefetch href='/me'><a className='navbar-item'>{`Profile ${self.props.name}`}</a></Link>
-      <a className='navbar-item' onClick={self.onLogout}>Logout</a>
+      <div className='navbar-item'><Link prefetch href='/me'><a className='button is-info'>{`Profile ${self.props.name}`}</a></Link></div>
+      <div className='navbar-item'><button className='button is-warning' onClick={self.onLogout}>Logout</button></div>
     </Fragment>
     : <div className='field is-horizontal navbar-item'>
       <form onSubmit={self.onSubmit}>
@@ -54,7 +54,7 @@ class Auth extends Component {
 
   render () {
     const oups = this.state.error
-      ? <div className='navbar-item'>{this.state.error}</div>
+      ? <div className='navbar-item has-background-danger'>{this.state.error}</div>
       : null
 
     return (
