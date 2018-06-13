@@ -19,7 +19,7 @@ class MainMenu extends Component {
     return <nav className='navbar is-primary' role='navigation' aria-label='main navigation'>
       <div className='container'>
         <div className='navbar-brand'>
-          <Link href='/' prefetch><a className='navbar-item'>Accueil</a></Link>
+          <Link href='/' prefetch><a className='navbar-item has-text-weight-bold'>Accueil</a></Link>
           <button role='button' onClick={this.toggleActive} className={`navbar-burger${this.state.active ? ' is-active' : ''}`} aria-label='menu' aria-expanded='false'>
             <span aria-hidden />
             <span aria-hidden />
@@ -30,7 +30,7 @@ class MainMenu extends Component {
           <div className='navbar-start'>
             <Link href='/gifts' prefetch><a className='navbar-item'>Magasin</a></Link>
             <Link href='/hours' prefetch><a className='navbar-item'>Heures</a></Link>
-            <div className='navbar-item'>|</div>
+            <div className='navbar-item is-hidden-touch'>|</div>
             <Link href='/admin' prefetch><a className='navbar-item'>Admin</a></Link>
           </div>
           <div className='navbar-end'>

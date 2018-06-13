@@ -18,8 +18,10 @@ const Home = () => <Fragment>
             <p>
               <b>ATTENTION</b> Pour tester ce site, ne rechargez pas la page
               à moins de vouloir remettre les valeurs à neufs.
-              Les données ne sont ni transmises, ni sauvegardées.{' '}
-              <b>Il ne s’agit que d’une démonstration</b>.
+              Les données ne sont ni transmises, ni sauvegardées.
+            </p>
+            <p>
+              <b>Il ne s’agit que d’une démonstration éphémère</b>.
             </p>
           </div>
           <div className='column'>

@@ -8,6 +8,7 @@ import OrgDisplay from '../../shared/components/org-display'
 import VolunteerForm from '../../shared/components/volunteer-form'
 import ListOf from '../../shared/components/list-of'
 import Summary from '../../shared/components/summary'
+import Link from 'next/link'
 
 class Volunteers extends Component {
   constructor (props) {
@@ -20,6 +21,7 @@ class Volunteers extends Component {
       <Header title='Admin' subtitle='Les volontaires' />
       <section className='section'>
         <div className='container'>
+          <p><Link href='/hours' prefetch><a className='button'>Heures</a></Link></p>
           <Summary />
           <VolunteerForm username={this.props.username} save={this.save} />
           <ListOf items={this.props.volunteer} type='volunteer' />
