@@ -36,6 +36,7 @@ export default {
         err.field = 'volunteer'
         throw err
       }
+      if (!ret[idx].hours) { ret[idx].hours = 0 }
       ret[idx].hours += parseFloat(hours)
       return ret
     }
