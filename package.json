@@ -18,7 +18,7 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
-    "@rematch/core": "1.0.0-beta.4",
+    "@rematch/core": "1.0.0-beta.5",
     "detect-node": "^2.0.3",
     "next": "^6.1.0",
     "react": "^16.4.1",
