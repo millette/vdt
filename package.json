@@ -20,7 +20,7 @@
   "dependencies": {
     "@rematch/core": "1.0.0-beta.5",
     "detect-node": "^2.0.3",
-    "next": "^6.1.0",
+    "next": "^6.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
